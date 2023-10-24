@@ -15,6 +15,10 @@ public class ConnexionJpa {
 
         System.out.println("Connexion à la base de données réussie.");
 
+        
+        Region region1 = entityManager.find(Region.class, 1); 
+        System.out.println("Région extraite : " + region1.getNOM());
+
         entityManager.close();
         entityManagerFactory.close();
     }
