@@ -21,11 +21,14 @@ public class ConnexionJpa {
         
         Region nouvelleRegion = new Region();
         nouvelleRegion.setID(3);
-        nouvelleRegion.setNOM("Nouvelle Région");
+        nouvelleRegion.setNOM("Ile de France");
         entityManager.getTransaction().begin();
         entityManager.persist(nouvelleRegion);
         entityManager.getTransaction().commit();
-
+        
+        Region region3 = entityManager.find(Region.class, 3);
+        System.out.println("Nouvelle région extraite : " + region3.getNOM());
+        
         entityManager.close();
         entityManagerFactory.close();
     }
