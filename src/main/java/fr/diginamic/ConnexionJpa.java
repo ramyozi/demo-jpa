@@ -18,6 +18,13 @@ public class ConnexionJpa {
         
         Region region1 = entityManager.find(Region.class, 1); 
         System.out.println("Région extraite : " + region1.getNOM());
+        
+        Region nouvelleRegion = new Region();
+        nouvelleRegion.setID(3);
+        nouvelleRegion.setNOM("Nouvelle Région");
+        entityManager.getTransaction().begin();
+        entityManager.persist(nouvelleRegion);
+        entityManager.getTransaction().commit();
 
         entityManager.close();
         entityManagerFactory.close();
