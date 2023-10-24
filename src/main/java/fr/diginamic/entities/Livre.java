@@ -70,6 +70,12 @@ public class Livre {
 	public void setAUTEUR(String aUTEUR) {
 		AUTEUR = aUTEUR;
 	}
+
+	@Override
+	public String toString() {
+		return "Livre [ID=" + ID + ", TITRE=" + TITRE + ", AUTEUR="
+				+ AUTEUR + "]";
+	}
 	
 	
 	
